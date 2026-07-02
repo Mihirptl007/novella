@@ -1,0 +1,132 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Product card enhancements (used on /products) */
+.product-card--link {
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+}
+
+.product-card--link:focus-visible {
+  outline: 2px solid rgba(212, 165, 116, 0.8);
+  outline-offset: 3px;
+}
+
+.product-card__corner {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 220ms ease, transform 220ms ease;
+  pointer-events: none;
+}
+
+.product-card--link:hover .product-card__corner,
+.product-card--link:focus-visible .product-card__corner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card__corner-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 165, 116, 0.12);
+  border: 1px solid rgba(212, 165, 116, 0.25);
+  color: #D4A574;
+  font-size: 14px;
+}
+
+.product-card__corner-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(245, 240, 235, 0.9);
+}
+
+.product-card__short {
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.product-card--link:hover .product-card__image {
+  box-shadow: inset 0 0 0 1px rgba(212, 165, 116, 0.15), 0 18px 42px rgba(0, 0, 0, 0.35);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .product-card--link {
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+}
+
+/* Fix accordion dropdown cutting last grid row (esp. Specialty Chemicals / Acetic Acid) */
+.accordion-section[data-expanded="true"] .accordion-content {
+  /* Allow enough space for the last grid row (e.g. Specialty Chemicals / Acetic Acid) */
+  max-height: 4000px;
+  opacity: 1;
+}
+
+
+.accordion-section[data-expanded="false"] .accordion-content {
+  max-height: 0;
+  opacity: 0;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .product-card--link:hover {
+    transform: translateY(-6px);
+  }
+}
+
+
